@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} — Мой Магазин</title>
+    <link rel="stylesheet" href="{% static 'shop/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo"><a href="/">🛒 Мой Магазин</a></div>
+                <nav class="nav">
+                    <a href="/">🏠 Все товары</a>
+                    <a href="/admin/">🔐 Админка</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            <h1 class="detail-title">{{ product.name }}</h1>
+            <div class="detail-price">{{ product.price|floatformat:2 }} ₽</div>
+            <hr>
+            <h3>Описание</h3>
+            <div class="detail-description">{{ product.description|linebreaks }}</div>
+            <hr>
+            <p><small>📅 Добавлен: {{ product.created_at|date:"d.m.Y H:i" }}</small></p>
+            <a href="/" class="back-link">← Назад к списку</a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 Мой Магазин. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка */
+.header {
+    background: #1a1a2e;
+    color: white;
+    padding: 20px 0;
+    border-radius: 12px 12px 0 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav a {
+    color: #e8ecf1;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Карточки товаров */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    background: white;
+    border-radius: 0 0 12px 12px;
+}
+
+.product-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e8ecf1;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.product-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.product-card h2 a {
+    color: #2d4059;
+    text-decoration: none;
+}
+
+.product-card h2 a:hover {
+    text-decoration: underline;
+}
+
+.product-card p {
+    color: #4a4a6a;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.product-card .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d4059;
+}
+
+.btn {
+    display: inline-block;
+    background: #2d4059;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #1a2a3e;
+}
+
+/* Детальная страница */
+.detail-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.detail-title {
+    font-size: 32px;
+    color: #1a1a2e;
+}
+
+.detail-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d4059;
+    margin: 10px 0 20px;
+}
+
+.detail-description {
+    color: #2d2d44;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2d4059;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+.footer {
+    background: #1a1a2e;
+    color: #8a8aaa;
+    padding: 20px 30px;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}

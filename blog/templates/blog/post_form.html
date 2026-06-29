@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Редактировать{% else %}Создать{% endif %} пост</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">🏠 Главная</a>
+            <a href="{% url 'about' %}">ℹ️ О нас</a>
+            <a href="{% url 'post_list' %}">📝 Все посты</a>
+            <a href="{% url 'post_create' %}">✏️ Создать пост</a>
+        </nav>
+
+        <header>
+            <h1>{% if form.instance.pk %}✏️ Редактировать пост{% else %}✏️ Создать новый пост{% endif %}</h1>
+        </header>
+
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                <div class="form-group">
+                    <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                    {{ form.title }}
+                    {{ form.title.errors }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.content.id_for_label }}">{{ form.content.label }}</label>
+                    {{ form.content }}
+                    {{ form.content.errors }}
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        {% if form.instance.pk %}💾 Сохранить{% else %}✅ Создать{% endif %}
+                    </button>
+                    <a href="{% url 'post_list' %}" class="btn-secondary">Отмена</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>© 2026 Мой блог. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас — Мой блог</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">🏠 Главная</a>
+            <a href="{% url 'about' %}">ℹ️ О нас</a>
+            <a href="{% url 'post_list' %}">📝 Все посты</a>
+            <a href="{% url 'post_create' %}">✏️ Создать пост</a>
+        </nav>
+
+        <header>
+            <h1>ℹ️ О проекте</h1>
+        </header>
+
+        <div class="about-content">
+            <p>Этот блог создан в рамках домашнего задания по Django.</p>
+            <p>Здесь вы можете:</p>
+            <ul>
+                <li>📖 Просматривать все посты</li>
+                <li>✏️ Создавать новые посты</li>
+                <li>📝 Редактировать существующие посты</li>
+                <li>🗑️ Удалять посты</li>
+            </ul>
+            <p><strong>Технологии:</strong> Django 6.0, Python 3.14, SQLite</p>
+        </div>
+
+        <footer>
+            <p>© 2026 Мой блог. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>

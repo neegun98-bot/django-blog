@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} — Мой блог</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">🏠 Главная</a>
+            <a href="{% url 'about' %}">ℹ️ О нас</a>
+            <a href="{% url 'post_list' %}">📝 Все посты</a>
+            <a href="{% url 'post_create' %}">✏️ Создать пост</a>
+        </nav>
+
+        <article>
+            <h1>{{ post.title }}</h1>
+            <div class="post-meta">
+                <span>📅 {{ post.created_at|date:"d.m.Y H:i" }}</span>
+                {% if post.updated_at != post.created_at %}
+                    <span>🔄 Обновлён: {{ post.updated_at|date:"d.m.Y H:i" }}</span>
+                {% endif %}
+            </div>
+            <div class="post-content">
+                {{ post.content|linebreaks }}
+            </div>
+            <div class="post-actions">
+                <a href="{% url 'post_list' %}" class="btn-secondary">← Назад к списку</a>
+                <a href="{% url 'post_update' post.id %}" class="btn-small btn-edit">✏️ Редактировать</a>
+                <a href="{% url 'post_delete' post.id %}" class="btn-small btn-delete">🗑️ Удалить</a>
+            </div>
+        </article>
+
+        <footer>
+            <p>© 2026 Мой блог. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>

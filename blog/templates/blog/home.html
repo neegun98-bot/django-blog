@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — Мой блог</title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">🏠 Главная</a>
+            <a href="{% url 'about' %}">ℹ️ О нас</a>
+            <a href="{% url 'post_list' %}">📝 Все посты</a>
+            <a href="{% url 'post_create' %}">✏️ Создать пост</a>
+        </nav>
+
+        <header>
+            <h1>📚 Добро пожаловать в мой блог!</h1>
+            <p>Здесь вы найдёте интересные статьи и заметки.</p>
+        </header>
+
+        <div class="home-actions">
+            <a href="{% url 'post_list' %}" class="btn-primary">Просмотреть все посты</a>
+            <a href="{% url 'post_create' %}" class="btn-secondary">Создать новый пост</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Мой блог. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
